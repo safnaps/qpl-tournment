@@ -488,22 +488,12 @@ export default function Home() {
                       error={errors.company}
                     />
 
-                    <TextInput
-                      label="Employee ID"
-                      placeholder="e.g. EMP-982741"
-                      description="Your official active employee identification code."
-                      value={employeeId}
-                      onChange={(e) => {
-                        setEmployeeId(e.target.value);
-                        if (errors.employeeId) setErrors((prev) => ({ ...prev, employeeId: "" }));
-                      }}
-                      error={errors.employeeId}
-                    />
+                    
                   </div>
 
                   <div className="w-full">
                     <FileUpload
-                      label="Recent Photograph (Passphoto Style)"
+                      label="Recent Photograph"
                       description="Attach a clear, professional front-facing image (Max 5MB)."
                       selectedFile={photograph}
                       onFileSelect={handlePhotoSelect}
