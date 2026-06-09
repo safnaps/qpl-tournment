@@ -343,6 +343,13 @@ export const FileUpload: React.FC<FileUploadProps> = ({
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isDragActive, setIsDragActive] = useState(false);
 
+  // Reset input value when selectedFile is set to null externally
+  React.useEffect(() => {
+    if (!selectedFile && fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  }, [selectedFile]);
+
   const handleDrag = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();

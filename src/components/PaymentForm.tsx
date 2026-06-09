@@ -77,7 +77,7 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ amount, onPaymentSucce
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="w-full flex flex-col gap-6 animate-fade-in">
-          
+
           {/* Scan Info Summary */}
           <div className="p-4 rounded-xl bg-neutral-900/30 border border-neutral-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div className="flex flex-col">
@@ -100,7 +100,7 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ amount, onPaymentSucce
 
           {/* Payment QR Code Layout */}
           <div className="flex flex-col lg:flex-row items-center gap-8 bg-neutral-900/30 p-6 rounded-2xl border border-neutral-800 shadow-lg">
-            
+
             {/* QR Code Container */}
             <div className="flex flex-col items-center gap-3 shrink-0">
               <div className="p-3 bg-neutral-900 rounded-2xl relative group overflow-hidden border border-neutral-800 flex items-center justify-center shadow-md">
@@ -108,7 +108,7 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ amount, onPaymentSucce
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-white/5 to-white/10 opacity-70 pointer-events-none rounded-2xl" />
                 <div className="p-2.5 bg-white rounded-xl relative z-10">
                   <Image
-                    src="/payment_qr_code.png"
+                    src="/payment_qr.png"
                     alt="UPI Payment QR Code"
                     width={180}
                     height={180}
@@ -128,7 +128,7 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ amount, onPaymentSucce
                 <h4 className="text-sm font-bold text-white mb-2">Payment Instructions:</h4>
                 <ol className="list-decimal pl-4 text-xs text-zinc-400 flex flex-col gap-2 leading-relaxed">
                   <li>Scan the QR code using your mobile UPI App (GPay/PhonePe/Paytm).</li>
-                  <li>Verify payee details read <span className="font-bold text-zinc-200">ProSportz Raiders</span>.</li>
+                  <li>Verify payee details read <span className="font-bold text-zinc-200">Noble Jonathan</span>.</li>
                   <li>Confirm the transfer of exactly <span className="font-extrabold text-white">₹{amount}</span>.</li>
                   <li>Take a clear screenshot of the successful payment page.</li>
                   <li>Upload the screenshot in the file field below.</li>
@@ -139,11 +139,11 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ amount, onPaymentSucce
               <div className="bg-neutral-900/50 p-3 rounded-lg border border-neutral-800 text-xs flex flex-col gap-1.5 shadow-inner">
                 <div className="flex justify-between items-center">
                   <span className="text-zinc-500">UPI ID:</span>
-                  <span className="font-mono text-zinc-300 font-semibold selection:bg-white/10">prosportz.raiders@okaxis</span>
+                  <span className="font-mono text-zinc-300 font-semibold selection:bg-white/10">jonathanjacobnoble@okaxis</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-zinc-500">Merchant Name:</span>
-                  <span className="text-zinc-300 font-semibold">ProSportz Raiders</span>
+                  <span className="text-zinc-300 font-semibold">Noble Jonathan</span>
                 </div>
               </div>
             </div>
