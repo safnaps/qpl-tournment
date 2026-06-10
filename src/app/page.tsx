@@ -637,14 +637,14 @@ export default function Home() {
                 </div>
 
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-2 print:hidden">
-                  Registration Received!
+                  Registration completed!
                 </h2>
                 <p className="text-sm text-zinc-400 max-w-lg mb-8 leading-relaxed print:hidden">
                   Player registration details for <span className="font-semibold text-white print:text-black">{name}</span> have been sent to QPL audit cells. An email copy has been forwarded to <span className="font-medium text-white print:text-black">{email}</span>.
                 </p>
 
                 {/* Printable Invoice Receipt Card */}
-                <div className="w-full max-w-2xl p-6 sm:p-8 rounded-2xl border border-white/10 bg-slate-950/60 text-left relative overflow-hidden shadow-xl print:bg-white print:text-black print:border-solid print:border-zinc-300 print:shadow-none print:w-full print:p-0">
+                <div className="w-full max-w-2xl p-6 sm:p-8 rounded-2xl border border-white/10 bg-slate-950/60 text-left relative overflow-hidden shadow-xl print:bg-white print:text-black print:border-solid print:border-zinc-300 print:shadow-none print:w-full print:p-6 print-receipt-card">
 
                   {/* Glowing header accent */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 to-amber-500 print:hidden" />
@@ -658,13 +658,13 @@ export default function Home() {
                         Official Entry Confirmation
                       </span>
                     </div>
-                    <span className="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold uppercase tracking-wider print:bg-yellow-100 print:text-yellow-800 print:border-yellow-200">
+                    <span className="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold uppercase tracking-wider print:hidden">
                       Pending Verification
                     </span>
                   </div>
 
                   {/* Player Metadata & Info */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 py-6 border-y border-white/5 print:border-zinc-200">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 py-6 border-y border-white/5 print:border-zinc-200 print:mb-4 print:py-4 print:gap-4">
 
                     {/* Column 1: Personal info */}
                     <div className="flex flex-col gap-4 md:col-span-2">
@@ -681,12 +681,12 @@ export default function Home() {
                           <span className="text-zinc-200 font-semibold print:text-zinc-800">{mobile}</span>
                         </div>
                         <div className="flex flex-col gap-0.5">
-                          <span className="text-zinc-500 text-[10px] uppercase">Corporate Employer</span>
-                          <span className="text-zinc-200 font-semibold print:text-zinc-800">{company}</span>
+                          <span className="text-zinc-500 text-[10px] uppercase">Email Address</span>
+                          <span className="text-zinc-200 font-semibold print:text-zinc-800">{email}</span>
                         </div>
                         <div className="flex flex-col gap-0.5">
-                          <span className="text-zinc-500 text-[10px] uppercase">Employee ID</span>
-                          <span className="text-zinc-200 font-semibold print:text-zinc-800">{employeeId}</span>
+                          <span className="text-zinc-500 text-[10px] uppercase">Corporate Employer</span>
+                          <span className="text-zinc-200 font-semibold print:text-zinc-800">{company}</span>
                         </div>
                         <div className="flex flex-col gap-0.5 col-span-2">
                           <span className="text-zinc-500 text-[10px] uppercase">Home City / District</span>
@@ -698,7 +698,7 @@ export default function Home() {
                     {/* Column 2: Passphoto Preview */}
                     <div className="flex flex-col items-center md:items-end justify-center">
                       {photoUrl ? (
-                        <div className="w-24 h-24 rounded-lg overflow-hidden border border-white/10 relative shadow-md bg-slate-900 flex items-center justify-center print:border-zinc-300">
+                        <div className="w-24 h-24 rounded-lg overflow-hidden border border-white/10 relative shadow-md bg-slate-900 flex items-center justify-center print:border-zinc-300 print:w-20 print:h-20">
                           <Image
                             src={photoUrl}
                             alt="Player Passphoto"
@@ -719,12 +719,12 @@ export default function Home() {
                   </div>
 
                   {/* Football Profile Metadata */}
-                  <div className="mb-6 flex flex-col gap-4">
+                  <div className="mb-6 flex flex-col gap-4 print:mb-4 print:gap-2">
                     <h4 className="text-xs font-bold uppercase tracking-wider text-pink-500 print:text-indigo-700">
                       Football Profile details
                     </h4>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-slate-950/40 p-4 rounded-xl border border-white/5 print:bg-zinc-50 print:border-zinc-200">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-slate-950/40 p-4 rounded-xl border border-white/5 print:bg-zinc-50 print:border-zinc-200 print:gap-3 print:p-3">
                       <div className="flex flex-col gap-0.5">
                         <span className="text-zinc-500 text-[10px] uppercase">Position(s)</span>
                         <span className="text-sm font-semibold text-zinc-200 print:text-zinc-800 capitalize">
@@ -749,7 +749,7 @@ export default function Home() {
                   </div>
 
                   {/* Transaction breakdown & proof */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-white/5 print:border-zinc-200 text-sm">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-white/5 print:border-zinc-200 text-sm print:gap-4 print:pt-4">
                     {/* Invoice math */}
                     <div className="flex flex-col justify-between gap-3">
                       <div>
@@ -779,7 +779,7 @@ export default function Home() {
                         Uploaded Payment Proof
                       </span>
                       {screenshotUrl ? (
-                        <div className="w-full h-32 rounded-lg border border-pink-500/20 overflow-hidden relative shadow-md bg-slate-950 flex items-center justify-center group cursor-pointer print:border-zinc-300 print:h-28">
+                        <div className="w-full h-32 rounded-lg border border-pink-500/20 overflow-hidden relative shadow-md bg-slate-950 flex items-center justify-center group cursor-pointer print:border-zinc-300 print:h-20">
                           <Image
                             src={screenshotUrl}
                             alt="Payment Receipt Proof"
@@ -796,20 +796,12 @@ export default function Home() {
                   </div>
 
                 </div>
-
                 {/* Action Buttons */}
                 <div className="flex flex-wrap gap-4 justify-center mt-8 print:hidden">
                   <button
                     type="button"
-                    onClick={handleBack}
-                    className="py-2.5 px-5 rounded-lg border border-pink-500/20 text-pink-400 hover:text-pink-300 hover:bg-pink-500/5 transition-all duration-200 text-sm font-medium flex items-center gap-2 cursor-pointer"
-                  >
-                    <ArrowLeft className="w-4 h-4" /> Edit Details
-                  </button>
-                  <button
-                    type="button"
                     onClick={handlePrint}
-                    className="py-2.5 px-5 rounded-lg border border-white/10 text-zinc-300 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-medium flex items-center gap-2 cursor-pointer"
+                    className="py-2.5 px-5 rounded-lg border border-white/10 text-zinc-350 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-medium flex items-center gap-2 cursor-pointer"
                   >
                     <Printer className="w-4 h-4" /> Print Registration
                   </button>

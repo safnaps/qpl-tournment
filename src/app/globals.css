@@ -206,6 +206,14 @@ body {
     -webkit-text-fill-color: initial !important;
     color: #000000 !important;
   }
+
+  .print-receipt-card {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    transform: scale(0.94);
+    transform-origin: top center;
+    margin: 0 auto !important;
+  }
 }
 
 

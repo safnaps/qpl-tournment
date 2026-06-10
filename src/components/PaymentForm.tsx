@@ -170,7 +170,7 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ amount, onPaymentSucce
               onClick={onBack}
               className="py-3 px-6 rounded-lg border border-white/10 text-zinc-350 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-semibold flex items-center justify-center gap-2 cursor-pointer bg-transparent"
             >
-              <ArrowLeft className="w-4 h-4" /> Back
+              <ArrowLeft className="w-4 h-4" /> Edit the details
             </button>
             <button
               type="submit"
