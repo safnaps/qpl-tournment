@@ -233,7 +233,6 @@ export default function Home() {
     }
     if (!city.trim()) tempErrors.city = "City / District is required";
     if (!company.trim()) tempErrors.company = "Company Name is required";
-    if (!employeeId.trim()) tempErrors.employeeId = "Employee ID is required";
     if (!photograph) tempErrors.photograph = "A recent photograph is required";
 
     // 2. Football Details
@@ -250,11 +249,14 @@ export default function Home() {
     }
 
     setErrors(tempErrors);
-    return Object.keys(tempErrors).length === 0;
+    return tempErrors;
   };
 
   const handleProceedToPayment = async () => {
-    if (validatePage1()) {
+    const tempErrors = validatePage1();
+    const hasErrors = Object.keys(tempErrors).length > 0;
+
+    if (!hasErrors) {
       setIsCheckingDuplicate(true);
       try {
         const cleanMobile = mobile.replace(/\D/g, "");
@@ -285,7 +287,7 @@ export default function Home() {
       }
     } else {
       // Auto scroll to first error for convenience
-      const firstErrorKey = Object.keys(errors)[0];
+      const firstErrorKey = Object.keys(tempErrors)[0];
       if (firstErrorKey && typeof window !== "undefined") {
         const errorField = document.getElementsByName(firstErrorKey)[0];
         errorField?.scrollIntoView({ behavior: "smooth", block: "center" });
