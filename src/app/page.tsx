@@ -658,9 +658,6 @@ export default function Home() {
                         Official Entry Confirmation
                       </span>
                     </div>
-                    <span className="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold uppercase tracking-wider print:hidden">
-                      Pending Verification
-                    </span>
                   </div>
 
                   {/* Player Metadata & Info */}
